@@ -1,0 +1,5 @@
+services:
+  neoapp:
+    image: "sanjeevdevopdev/djangoapp"
+    ports:
+      - "8000:8000"
