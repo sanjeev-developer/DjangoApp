@@ -11,7 +11,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t sanjeevdevopdev/todoapp'
+                sh 'docker build -t sanjeevdevopdev/todoapp .'
             }       
         }
         
