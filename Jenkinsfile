@@ -14,6 +14,11 @@ pipeline {
                 sh 'docker build -t sanjeevdevopdev/todoapp .'
             }       
         }
-        
+
+        stage('Docker run') {
+            steps {
+                sh 'docker run -d -p 8000:8000 --name dockertodoappcontainer sanjeevdevopdev/todoapp'
+            }       
+        }
     }
 }
