@@ -25,5 +25,11 @@ pipeline {
                 }   
             }
         }
+
+        stage('Docker compose up') {
+            steps {
+                sh 'docker-compose -f sanjeev-compose.yml up -d'
+            }       
+        }
     }
 }
