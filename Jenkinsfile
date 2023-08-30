@@ -15,9 +15,9 @@ pipeline {
             }       
         }
 
-        stage('Docker run') {
+        stage('Docker push') {
             steps {
-                sh 'docker run -d -p 8000:8000 --name dockertodoappcontainer sanjeevdevopdev/todoapp'
+                sh 'docker push sanjeevdevopdev/todoapp'
             }       
         }
     }
