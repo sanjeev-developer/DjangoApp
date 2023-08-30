@@ -18,7 +18,7 @@ pipeline {
         stage('Docker push') {
             steps {
                 script{
-                    withCredentials([string(credentialsId: 'docker-sanjeev', variable: 'docker-pwd')]) {
+                    withCredentials([string(credentialsId: 'docker-sanjeev', variable: 'dockerpass')]) {
                         sh 'docker login -u sanjeevdevopdev -p ${docker-pwd}'
                     }
                     sh 'docker push sanjeevdevopdev/todoapp'
