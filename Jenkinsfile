@@ -18,8 +18,8 @@ pipeline {
         stage('Docker push') {
             steps {
                 script{
-                    withCredentials([string(credentialsId: 'docker-sanjeev', variable: 'dockerpass')]) {
-                        sh 'docker login -u sanjeevdevopdev -p ${docker-pwd}'
+                    withCredentials([string(credentialsId: 'dockerpass', variable: 'dockerpassword')]) {
+                        sh 'docker login -u sanjeevgupta9223@gmail.com -p ${dockerpassword}'
                     }
                     sh 'docker push sanjeevdevopdev/todoapp'
                 }   
