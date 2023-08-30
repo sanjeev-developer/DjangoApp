@@ -17,10 +17,12 @@ pipeline {
 
         stage('Docker push') {
             steps {
-                withCredentials([string(credentialsId: 'docker-sanjeev', variable: 'docker-pwd')]) {
-                    sh 'docker login -u sanjeevdevopdev -p ${docker-pwd}'
-                }
-                sh 'docker push sanjeevdevopdev/todoapp'
+                script{
+                    withCredentials([string(credentialsId: 'docker-sanjeev', variable: 'docker-pwd')]) {
+                        sh 'docker login -u sanjeevdevopdev -p ${docker-pwd}'
+                    }
+                    sh 'docker push sanjeevdevopdev/todoapp'
+                }   
             }
         }
     }
