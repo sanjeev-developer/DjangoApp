@@ -17,8 +17,10 @@ pipeline {
 
         stage('Docker push') {
             steps {
-                sh 'docker push sanjeevdevopdev/todoapp'
-            }       
+                withCredentials([string(credentialsId: 'sanjeevdevopdev', variable: 'docker')]) {
+                    sh 'docker push sanjeevdevopdev/todoapp'
+                }
+               
         }
     }
 }
