@@ -20,7 +20,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'sanjeevdevopdev', variable: 'docker')]) {
                     sh 'docker push sanjeevdevopdev/todoapp'
                 }
-               
+            }
         }
     }
 }
